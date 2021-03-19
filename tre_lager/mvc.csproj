@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ElephantController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TigerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -172,6 +173,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Tiger\Index.cshtml" />
     <Content Include="Views\Tiger\Edit.cshtml" />
+    <Content Include="Views\Shared\_TigerPartial.cshtml" />
+    <Content Include="Views\Shared\_TigerEmailTextBoxes.cshtml" />
+    <Content Include="Views\Shared\_JoelsLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

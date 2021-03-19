@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,17 +8,15 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Entities
 {
-    public class Tiger
+    public class Nest
     {
         [Key]
         public Guid Id { get; set; }
 
-        public string Color { get; set; }
+        public NestType Type { get; set; }
 
-        public int Weight { get; set; }
+        public bool FirstChoice { get; set; }
 
-        public string Age { get; set; }
-
-        public virtual ICollection<Nest> Nests { get; set; }
+        public virtual Tiger Tiger { get; set; }
     }
 }

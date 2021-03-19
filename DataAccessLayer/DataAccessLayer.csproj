@@ -51,10 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Nest.cs" />
     <Compile Include="Entities\Tiger.cs" />
+    <Compile Include="Enums\NestType.cs" />
     <Compile Include="Migrations\202103131429110_Initial.cs" />
     <Compile Include="Migrations\202103131429110_Initial.designer.cs">
       <DependentUpon>202103131429110_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103142130568_nests.cs" />
+    <Compile Include="Migrations\202103142130568_nests.designer.cs">
+      <DependentUpon>202103142130568_nests.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103131429110_Initial.resx">
       <DependentUpon>202103131429110_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103142130568_nests.resx">
+      <DependentUpon>202103142130568_nests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

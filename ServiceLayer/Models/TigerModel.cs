@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,12 @@ namespace ServiceLayer.Models
         public string Color { get; set; }
 
         public int Weight { get; set; }
-        public Guid Id { get; internal set; }
+        public Guid Id { get; set; }
+
+        public List<NestModel> Nests { get; set; }
+
+        public string Email { get; set; }
+
+        public string VerifyEmail { get; set; }
     }
 }

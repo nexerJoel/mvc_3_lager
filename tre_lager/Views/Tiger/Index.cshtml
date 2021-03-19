@@ -1,7 +1,74 @@
 ﻿@model IEnumerable<ServiceLayer.Models.TigerModel>
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_JoelsLayout.cshtml";
 }
+
+<h1>Add tiger:</h1>
+@using (Html.BeginForm("CreateTiger", "Tiger", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <label for="Color">Color</label>
+                <input class="form-control text-box single-line" id="Color" name="Color" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <label for="Weight">Weight</label>
+                <input class="form-control text-box single-line" id="Weight" name="Weight" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<h1>Add tiger 2:</h1>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <label for="Color">Color</label>
+                <input class="form-control text-box single-line" id="Color" name="Color" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-10">
+                <label for="Weight">Weight</label>
+                <input class="form-control text-box single-line" id="Weight" name="Weight" type="text" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
 
 <h2>All tigers</h2>
 <table class="table table-hover">
@@ -24,20 +91,24 @@
                         linkText: "Edit",
                         actionName: "Edit",
                         controllerName: "Tiger",
-                        routeValues: new {
-                        id = tiger.Id
-                        },
+                        routeValues: new
+                             {
+                                id = tiger.Id,
+                                name = tiger.Color,
+                                legs = 10
+                             },
                         htmlAttributes: null
                         )
-
                     </td>
                 </tr>
             }
         }
-        
-        
+
+
 
     </tbody>
 </table>
+
+@Html.Partial("_tigerPartial")
 
 
